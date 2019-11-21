@@ -1,0 +1,63 @@
+1. Enter the number of hours it took you to complete the project between
+   the <<< and >>> signs below (eg, <<<10>>>).
+    <<<12>>>
+
+2. Enter the difficulty level (1: very easy; 5: very difficult) of the project
+   between the <<< and >>> signs below (eg, <<<3>>>).
+
+   <<<5>>>
+
+3. Provide a short description of how you approached each problem, issues you 
+   encountered, and how you resolved those issues.
+
+   Problem 1 (Markov Model Data Type): For the Markov Model constructor, I
+   created two instance variables, self._k (order) and self._st (dict). I
+   appended k to the end of the text string. For each kgram in text, based
+   on the number of occurrences in the text, we get a fixed probability.
+   I incremented the frequency in the dictionary _st[kgram] by 1. For the
+   order method, all I did was return self._k, or the order of the
+   Markov Model. For the kgram_freq method, I returned the sum function of
+   values of _st[kgram]. For the char_freq method, I returned the value of c
+   in _st[kgram], and 0 otherwise. For the rand method, I raised a Value Error
+   if kgram wasn't in _st, or else I created a list, a, to iterate over and
+   randomly pick and return a character following kgram. For the gen method,
+   I set text equal to kgram, then iterated backwards with a for loop, adding
+   a random character to text and updating kgram. For the replace_unknown
+   method, I initialized two variables, kgram_before and kgram_after, to
+   represent the kgram before and after the ~ (respectively). I created an
+   empty array called probs, and created a variable named hypothesis.
+   I iterated through hypotheseis and set kgram equal to kgram_before + m +
+   kgram_after, and set p = 1.0.
+
+   Problem 2 (Random Text Generator): In creating this client program, I had
+   to take two command line arguments k (first number of characters) and T
+   (what is printed as a result). I initialized text to read from standard
+   input. I created a Markov Model named model with parameters text and k, and
+   created a variable rand in which model utilized the gen() method, with the
+   first k characters of text and T and parameters. Lastly, I printed rand to
+   standard output.
+
+   Problem 3 (Noisy Message Decoder): In the fix_corrupted.py file, I read
+   command line arugments k (model order) and s (noisy message), and set text
+   to read from standard input. I created a variable of object MarkovModel
+   named model with parameters text and k. I wrote to standard output the
+   replace_unknown method to model. In order to complete this problem, we
+   had to implement the method replace_unknown() in MarkovModel.
+
+4. Did you receive help from anyone? List their names, status (classmate, 
+   CS110 grad, TA, other), and the nature of help received.
+
+   Name               Status       Help Received
+   ----               ------       -------------
+
+    Tengpeng Li    TA     helped us understand the concepts of the problems
+    Laura Chamberlain   SI   helped fix my errors (including Value Error)
+
+5. List any other comments here. Feel free to provide any feedback on how
+   much you learned from doing the assignment, and whether you enjoyed
+   doing it.
+
+   This was a very difficult project to comprehend because I also had to wrap
+   my mind around what a Markov Model was. I wish there was more guidance
+   given as we were just delving into classes/objects and methods; an
+   easier project would have been more manageable.
